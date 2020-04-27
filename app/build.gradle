@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+//FIREBASE
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.adminmanagermvvm"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        multiDexEnabled true
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def firebaseversion = "17.2.2"
+    def firebaseauth = "19.1.0"
+    def firestore = "21.1.1"
+    def firebasedatabase = "19.1.0"
+    def firestorage = "17.0.0"
+    def firebsecore = "17.2.0"
+    def lifecycle_extenstion = "2.2.0-beta01"
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //FIREBASE SDK
+    implementation "com.google.firebase:firebase-analytics:$firebaseversion"
+    implementation 'com.android.support:multidex:1.0.3'
+    //for save firebase
+    implementation "com.google.firebase:firebase-auth:$firebaseauth"
+    implementation "com.google.firebase:firebase-firestore:$firestore"
+    implementation "com.google.firebase:firebase-database:$firebasedatabase"
+    implementation "com.google.firebase:firebase-storage:$firestorage"
+    implementation "com.google.firebase:firebase-core:$firebsecore"
+    implementation 'com.firebaseui:firebase-ui-database:3.1.3'
+    //Arcitecture
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extenstion"
+}

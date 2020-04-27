@@ -1,0 +1,2 @@
+rootProject.name='AdminManager(MVVM)'
+include ':app'
