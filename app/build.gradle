@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.adminmanagermvvm"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         multiDexEnabled true
@@ -25,6 +25,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding.enabled = true
+
 
 }
 

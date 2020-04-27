@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AdminManager(MVVM)</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="joining_salary">Joining Salary</string>
+    <string name="account_number">Account Number </string>
+    <string name="save">Save</string>
 </resources>
