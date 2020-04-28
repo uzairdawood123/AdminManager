@@ -8,4 +8,6 @@
     <string name="joining_salary">Joining Salary</string>
     <string name="account_number">Account Number </string>
     <string name="save">Save</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
 </resources>

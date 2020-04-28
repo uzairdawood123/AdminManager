@@ -1,6 +1,7 @@
 package com.example.adminmanagermvvm.feature.addUserInfo.ui
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -17,12 +18,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 
-class MainActivity : AppCompatActivity(), SaveListener {
+class AddEmployeeInfo : AppCompatActivity(), SaveListener {
     lateinit var binding: ActivityMainBinding
 
-    private val tablename = "user_info"
-    var firebaseDatabase: FirebaseDatabase? = null
-    var databaseReference: DatabaseReference?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +33,11 @@ class MainActivity : AppCompatActivity(), SaveListener {
         binding.viewmodel = viewModel
 
 
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.add, menu)
+        return true
     }
 
     override fun Onsave() {
