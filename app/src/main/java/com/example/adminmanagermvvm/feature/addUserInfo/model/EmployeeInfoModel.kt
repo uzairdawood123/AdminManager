@@ -8,9 +8,13 @@ data class EmployeeInfoModel (
     val address: String? ,
     val joinigsalary: String? ,
     val accounnumber: String? ){
+    constructor(): this("","","","","",""," "){
 
-    companion object {
-    @JvmStatic fun callStatic() {}
-    fun callNonStatic() {}
-}
+    }
+
+
+//    companion object : MutableList<EmployeeInfoModel> {
+//    @JvmStatic fun callStatic() {}
+//    fun callNonStatic() {}
+//}
 }

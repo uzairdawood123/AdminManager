@@ -1,4 +1,4 @@
-package com.example.adminmanagermvvm.feature.addUserInfo.readEmployeeInfo
+package com.example.adminmanagermvvm.feature.readEmployeeInfo
 
 import android.os.Bundle
 import android.view.Menu

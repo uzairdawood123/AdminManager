@@ -34,11 +34,7 @@ class AddEmployeeInfo : AppCompatActivity(), SaveListener {
 
 
     }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.add, menu)
-        return true
-    }
+
 
     override fun Onsave() {
         toast("Data Saved")

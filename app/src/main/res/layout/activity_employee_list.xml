@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@color/background1"
-    tools:context=".feature.addUserInfo.readEmployeeInfo.EmployeeList">
+    tools:context=".feature.readEmployeeInfo.EmployeeList">
     
     <ImageView
         android:id="@+id/image_view"
