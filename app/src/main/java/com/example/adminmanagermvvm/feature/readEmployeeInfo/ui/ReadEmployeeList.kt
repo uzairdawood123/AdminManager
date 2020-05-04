@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class ReadEmployeeList : AppCompatActivity() {
-    private val tablename = "user_info"
+    private val tablename = "employee_info_mvvm"
     val ref= FirebaseDatabase.getInstance().getReference(tablename)
     lateinit var employeeList: MutableList<EmployeeInfoModel>
     lateinit var list:ListView
@@ -30,11 +30,13 @@ class ReadEmployeeList : AppCompatActivity() {
         list= findViewById(R.id.listview)
 
         ref.addValueEventListener(object : ValueEventListener {
+
             override fun onCancelled(p0: DatabaseError) {
 
             }
 
             override fun onDataChange(p0: DataSnapshot) {
+
                 if (p0.exists()){
                     for (postsnapshot in p0.children){
                         val employee = postsnapshot.getValue(EmployeeInfoModel::class.java)
@@ -67,3 +69,4 @@ class ReadEmployeeList : AppCompatActivity() {
         return true
     }
 }
+

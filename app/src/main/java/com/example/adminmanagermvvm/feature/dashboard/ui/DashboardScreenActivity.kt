@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.adminmanagermvvm.R
 import com.example.adminmanagermvvm.databinding.ActivityDashboardScreenBinding
 import com.example.adminmanagermvvm.databinding.ActivityUserLoginBinding
+import com.example.adminmanagermvvm.feature.addNewUser.ui.AddNewUserActivity
 import com.example.adminmanagermvvm.feature.readEmployeeInfo.ui.ReadEmployeeList
 
 class DashboardScreenActivity : AppCompatActivity() {
@@ -18,10 +19,18 @@ class DashboardScreenActivity : AppCompatActivity() {
         bindings.addemployee.setOnClickListener {
             onclick()
         }
+        bindings.salary.setOnClickListener {
+            onclicksalry()
+        }
 
     }
     fun onclick(){
         val intent = Intent(applicationContext, ReadEmployeeList::class.java)
+        startActivity(intent)
+
+    }
+    fun onclicksalry(){
+        val intent = Intent(applicationContext, AddNewUserActivity::class.java)
         startActivity(intent)
 
     }

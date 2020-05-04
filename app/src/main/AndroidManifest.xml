@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.dashboard.ui.DashboardScreenActivity"></activity>
+        <activity android:name=".feature.addNewUser.ui.AddNewUserActivity"></activity>
+        <activity android:name=".feature.addNewUser.em" />
+        <activity android:name=".feature.dashboard.ui.DashboardScreenActivity" />
         <activity android:name=".feature.dashboard.DashboardActivity" />
         <activity
             android:name=".feature.login.ui.UserLoginActivity"

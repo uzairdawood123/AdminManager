@@ -1,14 +1,21 @@
 package com.example.adminmanagermvvm.feature.addUserInfo.viewmodel
 
+import android.content.Intent
+import android.net.Uri
 import android.view.View
-import android.widget.Toast
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.ViewModel
 import com.example.adminmanagermvvm.Interface.SaveListener
 import com.example.adminmanagermvvm.feature.addUserInfo.model.EmployeeInfoModel
+import com.google.common.io.Files.getFileExtension
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 class SaveEmployeeInfoViewModel: ViewModel() {
-    private val tablename = "user_info"
+    private val tablename = "employee_info_mvvm"
+    lateinit var storage:StorageReference
+    var pickedImgUri: Uri? = null
     var savelistner: SaveListener?=null
     var firstname: String? = null
     var lastname: String? = null
@@ -31,6 +38,7 @@ class SaveEmployeeInfoViewModel: ViewModel() {
 
 
 
+
         val ref= FirebaseDatabase.getInstance().getReference(tablename)
         val ids= ref.push().key
         if (ids != null) {
@@ -40,6 +48,7 @@ class SaveEmployeeInfoViewModel: ViewModel() {
 
 
     }
+
 
 
 }
