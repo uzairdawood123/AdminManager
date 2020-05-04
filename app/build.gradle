@@ -38,7 +38,7 @@ dependencies {
     def firestorage = "17.0.0"
     def firebsecore = "17.2.0"
     def lifecycle_extenstion = "2.2.0-beta01"
-    def recyclerview="28.1.0"
+    def recyclerview = "28.1.0"
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
