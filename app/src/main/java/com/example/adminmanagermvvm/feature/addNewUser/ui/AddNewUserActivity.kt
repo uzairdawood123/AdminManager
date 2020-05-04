@@ -18,22 +18,26 @@ class AddNewUserActivity : AppCompatActivity() {
     private var mDatabaseReference: DatabaseReference? = null
     private var mDatabase: FirebaseDatabase? = null
     private var mAuth: FirebaseAuth? = null
-    private var firstName: String?=null
-    var lastname: String?=null
+    private var firstName: String? = null
+    var lastname: String? = null
+    val tablename = "user_MvvM"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_add_new_user)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_new_user)
         mDatabase = FirebaseDatabase.getInstance()
-        mDatabaseReference = mDatabase!!.reference!!.child("Users")
+
+        mDatabaseReference = mDatabase!!.reference!!.child(tablename)
         mAuth = FirebaseAuth.getInstance()
         binding.btnAddNewuser.setOnClickListener {
             createaccount()
         }
     }
-    fun createaccount(){
-       firstName = binding.firstNameValue?.text.toString()
-       lastname = binding.lastNameValue?.text.toString()
+
+
+    fun createaccount() {
+        firstName = binding.firstNameValue?.text.toString()
+        lastname = binding.lastNameValue?.text.toString()
 
         mAuth!!
             .createUserWithEmailAndPassword(firstName!!, lastname!!)
@@ -43,12 +47,16 @@ class AddNewUserActivity : AppCompatActivity() {
                     val currentUserDb = mDatabaseReference!!.child(userId)
                     currentUserDb.child("firstName").setValue(firstName)
                     currentUserDb.child("lastName").setValue(lastname)
-                    Toast.makeText(applicationContext, "User Added.",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext, "User Added.",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
                 } else {
-                    Toast.makeText(applicationContext, "Authentication failed."+task.exception,
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext, "Authentication failed." + task.exception,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }

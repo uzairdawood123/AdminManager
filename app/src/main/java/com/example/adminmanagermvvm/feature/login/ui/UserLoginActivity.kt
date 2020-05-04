@@ -35,7 +35,6 @@ class UserLoginActivity : AppCompatActivity(),SaveListener{
 
         bindings.viewmodel = viewModel
         bindings.btnLogin.setOnClickListener {
-//            onclick()
             loginUser()
         }
 
@@ -45,11 +44,7 @@ class UserLoginActivity : AppCompatActivity(),SaveListener{
 
     }
 
-    fun onclick(){
-        val intent = Intent(applicationContext, AddNewUserActivity::class.java)
-        startActivity(intent)
 
-    }
 
     override fun Onsave() {
         toast("click")

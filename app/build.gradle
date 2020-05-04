@@ -38,6 +38,7 @@ dependencies {
     def firestorage = "17.0.0"
     def firebsecore = "17.2.0"
     def lifecycle_extenstion = "2.2.0-beta01"
+    def recyclerview="28.1.0"
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -60,8 +61,9 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:3.1.3'
     //Arcitecture
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extenstion"
-    implementation 'com.android.support:recyclerview-v7:28.1.0'
-    implementation 'com.android.support:cardview-v7:28.1.0'
+    //noinspection GradleCompatible
+    implementation "com.android.support:recyclerview-v7:$recyclerview"
+    implementation "com.android.support:cardview-v7:$recyclerview"
     //PICASSO
     implementation 'com.squareup.picasso:picasso:2.71828'
 }
